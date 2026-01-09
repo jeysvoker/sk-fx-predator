@@ -1,0 +1,1120 @@
+/* =========================
+  styles.css (UPDATED FULL)
+  - Kept your existing styles
+  - Added QUANTUM home card + QUANTUM details styles
+  - Added cta-row--left
+========================= */
+
+/* -----------------------------
+   Base
+------------------------------ */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #fff;
+  background: #000;
+  overflow-x: hidden;
+}
+
+/* Background image + dim overlay */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background: url("assets/bg.jpg") center/cover no-repeat;
+  z-index: -2;
+}
+body::after{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35); /* затемнення */
+  z-index: -1;
+}
+
+/* -----------------------------
+   Layout
+------------------------------ */
+.page{
+  padding: 18px 16px 28px;
+}
+
+.section{
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hero{
+  padding: 28px 16px 0;
+}
+
+.hero__top{
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.hero__logo{
+  width: 66px;
+  height: 66px;
+  border-radius: 16px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.hero__title{
+  margin: 6px 0 0;
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.hero__subtitle{
+  margin: 10px 0 14px;
+  opacity: 0.9;
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+.hero__links{
+  display: inline-flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.link{
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  font-size: 14px;
+}
+.link:hover{ text-decoration: underline; }
+
+/* -----------------------------
+   Cards
+------------------------------ */
+.card{
+  background: rgba(92, 74, 60, 0.78);
+  border-radius: 26px;
+  overflow: hidden;
+  margin: 16px auto;
+}
+
+.card--big{
+  width: 100%;
+  padding: 0;
+}
+
+.card__body{
+  padding: 28px 26px;
+}
+
+.card__body--center{
+  text-align: center;
+}
+
+.card__kicker{
+  font-size: 12px;
+  letter-spacing: 2px;
+  opacity: 0.85;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.card__title{
+  margin: 0;
+  font-weight: 900;
+  font-size: clamp(30px, 4.6vw, 54px);
+  letter-spacing: 1px;
+}
+
+.card__lead{
+  margin: 10px 0 10px;
+  opacity: 0.92;
+}
+
+.card__text{
+  margin: 10px 0 0;
+  opacity: 0.92;
+  line-height: 1.45;
+}
+
+.card__text--center{
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card--disclaimer{
+  max-width: 1100px;
+}
+
+.card--mentor .card__body{
+  text-align: center;
+}
+
+/* -----------------------------
+   Bullets (mentor card on home)
+------------------------------ */
+.bullets{
+  list-style: none;
+  padding: 0;
+  margin: 18px auto 0;
+  max-width: 900px;
+  text-align: center;
+  line-height: 1.55;
+  font-size: clamp(16px, 2vw, 26px);
+  font-weight: 650;
+  opacity: 0.95;
+}
+.bullets li{
+  margin: 10px 0;
+}
+.bullets li::before{
+  content: "• ";
+}
+
+/* -----------------------------
+   QUANTUM (HOME card)
+------------------------------ */
+.card--quantum .card__body{
+  text-align: left;
+}
+
+.quantum__title{
+  margin: 0;
+  font-weight: 900;
+  font-size: clamp(34px, 5vw, 66px);
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.quantum__subtitle{
+  margin: 10px 0 18px;
+  opacity: 0.92;
+  text-align: left;
+  font-size: clamp(18px, 2.2vw, 28px);
+  font-weight: 650;
+}
+
+.quantum__list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: clamp(16px, 2vw, 26px);
+  font-weight: 650;
+  line-height: 1.55;
+  opacity: 0.95;
+}
+
+.quantum__list li{
+  margin: 10px 0;
+  display: flex;
+  gap: 10px;
+}
+.quantum__list li::before{
+  content: "■";
+  opacity: 0.9;
+  flex: 0 0 auto;
+  transform: translateY(2px);
+}
+
+/* -----------------------------
+   Pills / Stack (details)
+------------------------------ */
+.stack{
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.stack--loose{
+  gap: 16px;
+}
+
+.pill{
+  background: rgba(0,0,0,0.45);
+  border-radius: 22px;
+  padding: 18px 18px;
+  line-height: 1.35;
+  text-align: center;
+  opacity: 0.95;
+}
+
+.pill--wide{
+  width: min(860px, 100%);
+  margin: 0 auto;
+  font-size: clamp(18px, 2.2vw, 26px);
+  font-weight: 650;
+}
+
+.pill--center{
+  text-align: center;
+}
+
+/* -----------------------------
+   Big separation blocks (mentor details)
+------------------------------ */
+.big-block{
+  width: min(920px, 100%);
+  margin: 18px auto 0;
+  padding: 22px 18px;
+  background: rgba(0,0,0,0.45);
+  border-radius: 26px;
+  font-size: clamp(18px, 2.2vw, 28px);
+  line-height: 1.35;
+  font-weight: 650;
+}
+
+.reviews-block{
+  width: min(920px, 100%);
+  margin: 18px auto 0;
+  padding: 18px 16px 16px;
+  border-radius: 26px;
+  background: rgba(0,0,0,0.18);
+}
+
+.reviews-title{
+  font-size: 20px;
+  letter-spacing: 1px;
+  opacity: 0.9;
+  margin: 6px 0 12px;
+  text-transform: uppercase;
+}
+
+/* QUANTUM: make reviews title boxed like screenshot */
+.reviews-title--boxed{
+  display: inline-block;
+  padding: 10px 16px;
+  border: 2px solid rgba(255,255,255,0.8);
+  border-radius: 0;
+  opacity: 0.95;
+}
+
+/* QUANTUM: slightly lighter reviews area */
+.reviews-block--lite{
+  background: rgba(0,0,0,0.10);
+}
+
+/* -----------------------------
+   Story carousel
+------------------------------ */
+.story{
+  position: relative;
+  width: 100%;
+}
+
+.story__viewport{
+  width: 100%;
+  overflow: hidden;
+  border-radius: 18px;
+  background: rgba(0,0,0,0.35);
+}
+
+.story__track{
+  display: flex;
+  gap: 0;
+  transition: transform 300ms ease;
+  will-change: transform;
+}
+
+.story__slide{
+  min-width: 100%;
+  height: 380px;
+  object-fit: contain;
+  background: rgba(0,0,0,0.55);
+}
+
+.story__nav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  font-size: 26px;
+  cursor: pointer;
+  z-index: 2;
+}
+.story__nav:hover{ background: rgba(0,0,0,0.6); }
+.story__nav--prev{ left: 10px; }
+.story__nav--next{ right: 10px; }
+
+.story__dots{
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+.story__dot{
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.35);
+}
+.story__dot.is-active{
+  background: rgba(255,255,255,0.95);
+}
+
+/* -----------------------------
+   Buttons / CTA
+------------------------------ */
+.cta-row{
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.cta-row--center{
+  justify-content: center;
+}
+
+.cta-row--split{
+  justify-content: center;
+  gap: 14px;
+}
+
+/* NEW: left aligned CTA row (Quantum home screenshot button on left) */
+.cta-row--left{
+  justify-content: flex-start;
+}
+
+.btn{
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.btn--primary{
+  background: #e01818;
+  color: #fff;
+  min-width: 240px;
+  box-shadow: 0 10px 30px rgba(224, 24, 24, 0.25);
+}
+.btn--primary:hover{ filter: brightness(1.05); }
+
+.btn--join{
+  background: #d03326;
+  color: #fff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: min(720px, 92vw);
+  padding: 18px 22px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.btn--ghost{
+  background: rgba(0,0,0,0.45);
+  color: rgba(255,255,255,0.95);
+  min-width: 160px;
+  padding: 18px 22px;
+  border-radius: 22px;
+}
+
+.btn[disabled]{
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: grayscale(0.4);
+}
+
+/* -----------------------------
+   Titles inside details (mobile-like)
+------------------------------ */
+.screen-title{
+  margin: 6px 0 10px;
+  font-size: clamp(34px, 5vw, 58px);
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+/* QUANTUM: bigger/wider title like screenshot */
+.screen-title--wide{
+  font-size: clamp(44px, 7vw, 86px);
+  letter-spacing: 2px;
+  margin-top: 2px;
+}
+
+.screen-title--result{
+  font-size: clamp(36px, 6vw, 78px);
+  letter-spacing: 2px;
+  margin-top: 26px;
+}
+
+/* -----------------------------
+   QUANTUM DETAILS
+------------------------------ */
+.card--quantum-details{
+  background: rgba(0,0,0,0.10); /* closer to screenshot "text on bg" */
+}
+
+.quantum-top__subtitle{
+  margin: 0 0 16px;
+  font-size: clamp(18px, 2.2vw, 30px);
+  font-weight: 650;
+  opacity: 0.95;
+}
+
+.quantum-top__stats{
+  width: min(980px, 100%);
+  margin: 0 auto 26px;
+  display: grid;
+  gap: 14px;
+  font-size: clamp(18px, 2.3vw, 30px);
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+.q-head{
+  width: min(980px, 100%);
+  margin: 22px auto 10px;
+  text-align: left;
+  font-size: clamp(28px, 4vw, 56px);
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.q-head--center{
+  text-align: center;
+}
+
+.q-head--big{
+  margin-top: 28px;
+}
+
+.q-paragraph{
+  width: min(980px, 100%);
+  margin: 0 auto 18px;
+  text-align: left;
+  font-size: clamp(18px, 2.1vw, 28px);
+  line-height: 1.35;
+  opacity: 0.95;
+}
+
+.q-format{
+  width: min(980px, 100%);
+  margin: 12px auto 24px;
+  display: grid;
+  gap: 14px;
+}
+
+.q-item{
+  background: rgba(92, 74, 60, 0.78);
+  border-radius: 22px;
+  padding: 18px 18px;
+  font-size: clamp(18px, 2.1vw, 28px);
+  font-weight: 650;
+  line-height: 1.25;
+  text-align: left;
+}
+
+.q-includes{
+  width: min(980px, 100%);
+  margin: 0 auto 22px;
+  display: grid;
+  gap: 14px;
+  font-size: clamp(18px, 2.1vw, 28px);
+  font-weight: 650;
+  line-height: 1.35;
+  text-align: center; /* screenshot is centered */
+}
+
+.q-result{
+  width: min(820px, 100%);
+  margin: 8px auto 8px;
+  background: rgba(92, 74, 60, 0.78);
+  border-radius: 26px;
+  padding: 22px 20px;
+  font-size: clamp(18px, 2.1vw, 28px);
+  font-weight: 650;
+  line-height: 1.35;
+  text-align: center;
+}
+
+/* -----------------------------
+   Footer
+------------------------------ */
+.footer{
+  text-align: center;
+  opacity: 0.8;
+  margin-top: 18px;
+  padding-bottom: 8px;
+}
+
+/* -----------------------------
+   Helpers
+------------------------------ */
+.is-hidden{ display: none !important; }
+
+/* Spacing between cards so they do not overlap visually */
+#home .card{
+  margin: 22px auto;
+}
+
+/* Responsive tweaks */
+@media (max-width: 560px){
+  .card__body{ padding: 22px 18px; }
+  .btn--primary{ min-width: 210px; }
+  .story__slide{ height: 320px; }
+  .q-item{ text-align: left; }
+  .quantum__list li{ align-items: flex-start; }
+}
+
+.card--quantum .quantum-cta{
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+/* Center text inside the QUANTUM "Подробнее" button */
+.card--quantum a.btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-left: 0;   /* прибираємо можливий зсув */
+  padding-right: 0;  /* прибираємо можливий зсув */
+}
+
+.hero__links--social{
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.social-link{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.social-link img{
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.social-link:hover{
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+/* Clickable "ОТЗЫВЫ УЧЕНИКОВ" title */
+.reviews-title--link{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  text-decoration: none;
+  color: #fff;
+
+  padding: 10px 18px;
+  border-radius: 999px;
+
+  /* glass + subtle border */
+  background: rgba(0,0,0,.30);
+  border: 1px solid rgba(255,255,255,.18);
+  backdrop-filter: blur(10px);
+
+  letter-spacing: .18em;
+  text-transform: uppercase;
+
+  transition: transform .18s ease, opacity .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.reviews-title__icon{
+  font-size: 0.95em;
+  opacity: .85;
+  transform: translateY(-1px);
+}
+
+.reviews-title--link:hover{
+  transform: translateY(-1px);
+  border-color: rgba(255,255,255,.35);
+  background: rgba(0,0,0,.40);
+}
+
+.reviews-title--link:active{
+  transform: translateY(0px);
+  opacity: .92;
+}
+
+.reviews-title--link:focus-visible{
+  outline: 2px solid rgba(255,255,255,.55);
+  outline-offset: 4px;
+}
+
+/* MENTORSHIP: bullets left, while the card can stay centered */
+.card--mentor .bullets{
+  text-align: left;        /* головне */
+  max-width: 720px;        /* щоб не тягнулося на всю ширину */
+  margin: 18px auto 22px;  /* сам список по центру карточки */
+  padding-left: 28px;      /* відступ під маркери */
+}
+
+/* якщо в тебе глобально li центряться або мають margin-auto */
+.card--mentor .bullets li{
+  text-align: left;
+  margin: 0 0 12px 0;
+  line-height: 1.5;
+}
+
+/* MENTORSHIP: real left bullets (no centered-looking text) */
+.card--mentor .bullets{
+  list-style: disc;              /* повертаємо нормальні маркери */
+  list-style-position: outside;
+  text-align: left;
+  max-width: 820px;              /* трохи ширше, щоб не ламало рядки дивно */
+  margin: 18px auto 22px;
+  padding-left: 44px;            /* відступ під маркер + текст */
+}
+
+/* прибираємо штучну крапку "• " саме в mentor */
+.card--mentor .bullets li::before{
+  content: none !important;
+}
+
+.card--mentor .bullets li{
+  margin: 10px 0;
+  text-align: left;
+}
+
+.card--mentor .bullets{
+  list-style: none;
+  padding: 0;
+
+  /* 🔥 головне тут */
+  margin: 18px 0 22px;     /* було auto → тепер притиснуто вліво */
+  max-width: 820px;
+
+  text-align: left;
+}
+
+/* =========================
+   MENTORSHIP: left list with bullets
+========================= */
+.card--mentor .bullets{
+  list-style: disc;            /* ← повертаємо кружечки */
+  list-style-position: outside;
+
+  margin: 18px 0 22px;         /* ← притискаємо список вліво */
+  padding-left: 28px;          /* ← місце під кружечки */
+
+  max-width: 820px;
+  text-align: left;
+}
+
+.card--mentor .bullets li{
+  margin: 12px 0;
+  text-align: left;
+}
+
+/* =========================
+   CLOSED CHAT: bullets left only
+========================= */
+.card:not(.card--mentor):not(.card--quantum) .bullets{
+  list-style: disc;
+  list-style-position: outside;
+
+  text-align: left;
+  max-width: 820px;
+
+  margin: 22px auto 26px;
+  padding-left: 44px; /* відступ під кружечки */
+}
+
+.card:not(.card--mentor):not(.card--quantum) .bullets li{
+  margin: 12px 0;
+  text-align: left;
+}
+
+/* прибираємо штучні • якщо десь ще лишились */
+.card:not(.card--mentor):not(.card--quantum) .bullets li::before{
+  content: none !important;
+}
+
+/* CLOSED CHAT: bullets like mentor (left edge), but keep title/subtitle centered */
+#home > .card:not(.card--mentor):not(.card--quantum) .bullets{
+  list-style: disc;
+  list-style-position: outside;
+
+  text-align: left;
+  max-width: none;        /* не обмежуємо ширину */
+  width: 100%;            /* займає всю ширину карточки */
+
+  margin: 22px 0 26px;    /* ВАЖЛИВО: без auto, щоб не центрувало */
+  padding-left: 44px;     /* кружечки + відступ (як у mentor) */
+}
+
+/* прибираємо кастомний "• " (якщо десь лишився) */
+#home > .card:not(.card--mentor):not(.card--quantum) .bullets li::before{
+  content: none !important;
+}
+
+#home > .card:not(.card--mentor):not(.card--quantum) .bullets li{
+  margin: 12px 0;
+  text-align: left;
+}
+
+/* ===== FIX: "Закрытый чат" bullets як у "Менторшип" ===== */
+
+/* 1) лишаємо заголовок/підзаголовок по центру */
+#home .card.card--big:first-of-type .card__body--center{
+  text-align: center;
+}
+
+/* 2) список зсуваємо вліво і робимо як у mentor */
+#home .card.card--big:first-of-type .card__body--center .bullets{
+  list-style: disc !important;
+  list-style-position: outside;
+
+  text-align: left !important;
+
+  /* головне: прибираємо "центрування списку" */
+  margin: 18px 0 22px !important;     /* БЕЗ auto */
+  max-width: 820px !important;        /* як у mentor (можеш 720/820) */
+  padding-left: 44px !important;      /* як у mentor */
+
+  /* якщо десь є align/justify */
+  display: block !important;
+}
+
+/* 3) прибираємо ваш кастомний маркер "• " (бо тепер нормальні кружечки) */
+#home .card.card--big:first-of-type .card__body--center .bullets li::before{
+  content: none !important;
+}
+
+/* 4) на всякий — текст кожного пункту точно зліва */
+#home .card.card--big:first-of-type .card__body--center .bullets li{
+  text-align: left !important;
+}
+
+/* QUANTUM: зробити маркери кружечками як у інших */
+.quantum__list li::before{
+  content: "•" !important;   /* було "■" */
+  opacity: 0.95;
+  transform: translateY(0);  /* щоб не було зсуву */
+}
+
+/* опційно: трохи нормальніший відступ між кружечком і текстом */
+.quantum__list li{
+  gap: 12px;
+}
+
+/* ===============================
+   CHAT CARD — FORCE LEFT CONTENT
+   (mobile friendly, like mentorship)
+================================ */
+
+/* прибираємо центр для тексту КРІМ заголовків */
+.card[aria-label="Закритий чат"] .card__body{
+  text-align: left;
+}
+
+/* заголовок і підзаголовок лишаємо по центру */
+.card[aria-label="Закритий чат"] .card__title,
+.card[aria-label="Закритий чат"] .card__text{
+  text-align: center;
+}
+
+/* список — реально зліва */
+.card[aria-label="Закритий чат"] .bullets{
+  list-style: disc;
+  list-style-position: outside;
+
+  max-width: 100%;
+  margin: 22px 0 26px;     /* ❗ без auto */
+  padding-left: 48px;      /* ❗ сильний зсув вліво */
+
+  text-align: left;
+}
+
+/* текст пунктів */
+.card[aria-label="Закритий чат"] .bullets li{
+  margin: 14px 0;
+  font-size: clamp(16px, 4.2vw, 22px);
+  line-height: 1.45;
+}
+
+/* на мобільному ще сильніше вліво */
+@media (max-width: 560px){
+  .card[aria-label="Закритий чат"] .bullets{
+    padding-left: 36px;
+  }
+}
+
+/* CHAT: subtitle left aligned */
+.card[aria-label="Закритий чат"] .card__text{
+  text-align: left;
+  margin-left: 44px; /* такий самий зсув як у списків */
+  margin-right: 0;
+}
+
+/* CHAT: stronger left alignment on mobile */
+@media (max-width: 560px){
+  .card[aria-label="Закритий чат"] .card__text{
+    margin-left: 12px;   /* майже до лівого краю */
+    margin-right: 0;
+    text-align: left;
+  }
+
+  .card[aria-label="Закритий чат"] .bullets{
+    margin-left: 12px;   /* щоб subtitle і список були в одній лінії */
+  }
+}
+
+.section-label{
+  text-align: center;
+  font-size: clamp(18px, 3vw, 23px);
+  font-weight: 700;
+  letter-spacing: 0.08em; /* ⬅️ вужче, як у заголовків */
+  text-transform: uppercase;
+  opacity: 0.9;
+  margin: 24px 0 20px;
+  position: relative;
+}
+
+.section-label::after{
+  content: "";
+  display: block;
+  width: 90px;
+  height: 1px;
+  background: rgba(255,255,255,0.35);
+  margin: 10px auto 0;
+}
+
+.chat-intro {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.chat-intro .card__text {
+  opacity: 0.85;
+}
+
+.chat-benefits {
+  background: rgba(60, 45, 35, 0.85);
+  border-radius: 24px;
+  padding: 24px;
+}
+
+/* DETAILS-CHAT: top area without brown card */
+.chat-intro{
+  max-width: 1100px;
+  margin: 0 auto 18px;
+  padding: 10px 16px 0;
+  text-align: center;
+}
+
+.chat-intro__sub{
+  margin: 6px 0 0;
+  opacity: 0.9;
+}
+
+.chat-intro__desc{
+  margin: 10px 0 0;
+  opacity: 0.85;
+}
+
+/* "ВЫ ПОЛУЧАЕТЕ" look */
+.section-label{
+  margin: 24px 0 10px;
+  font-weight: 800;
+  letter-spacing: .18em; /* якщо завелике — зменш до .10em */
+  text-transform: uppercase;
+  opacity: 0.95;
+  font-size: clamp(22px, 4vw, 44px);
+}
+
+.section-label__line{
+  width: 220px;
+  height: 2px;
+  background: rgba(255,255,255,0.35);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* brown card starts AFTER the label */
+.card--chat-body{
+  margin-top: 14px;
+}
+
+/* REMOVE LINE UNDER "ВЫ ПОЛУЧАЕТЕ" */
+.section-label::after,
+.section-label::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* ================================
+   Transparent cards (Chat & Mentorship)
+================================ */
+
+.card--transparent {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* ================================
+   Pills — brown background blocks
+   (Chat & Mentorship)
+================================ */
+
+.pill {
+  background: rgba(120, 90, 65, 0.45); /* коричневий фон */
+  color: #ffffff;
+
+  border-radius: 20px;
+  padding: 18px 26px;
+  margin-bottom: 16px;
+
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.45;
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Мобільна адаптація */
+@media (max-width: 600px) {
+  .pill {
+    font-size: 14px;
+    padding: 16px 18px;
+    border-radius: 18px;
+  }
+}
+
+/* =========================
+   QUANTUM — same brown as Chat & Mentorship
+   ========================= */
+
+/* Формат работы */
+.card--quantum-details .q-item {
+  background: rgba(120, 90, 65, 0.45); /* коричневий фон */
+  border-radius: 28px;
+  padding: 18px 24px;
+  margin-bottom: 14px;
+}
+
+/* Что входит */
+.card--quantum-details .q-includes > div {
+  background: rgba(120, 90, 65, 0.45); /* коричневий фон */
+  border-radius: 28px;
+  padding: 18px 24px;
+  margin-bottom: 14px;
+}
+
+/* Результат */
+.card--quantum-details .q-result {
+  background: rgba(120, 90, 65, 0.45); /* коричневий фон */
+  border-radius: 28px;
+  padding: 22px 26px;
+}
+
+/* Mentor — make big-block same brown as pills */
+.card--transparent .big-block {
+  background: rgba(110, 85, 60, 0.45); /* той самий коричневий */
+  border-radius: 28px;
+  padding: 22px 26px;
+  color: #fff;
+  text-align: center;
+}
+
+/* Force reviews button text to stay in one line */
+.reviews-title {
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .reviews-title {
+    font-size: 14px;
+    letter-spacing: 0.04em;
+  }
+}
+
+.big-block {
+  margin-top: 100px;    /* відступ від верхніх фраз */
+  margin-bottom: 50px; /* відступ до відгуків */
+}
+
+.screen-title {
+  margin-bottom: 50px;
+}
+
+.quantum-top__subtitle {
+  margin-top: 6px;   /* було більше */
+  margin-bottom: 50px;
+}
+
+.quantum-top__stats {
+  text-align: left;
+  align-items: flex-start;
+  max-width: 950px;
+  margin: 0 auto 40px auto; /* по центру блок, але текст зліва */
+}
+
+.quantum-top__stats div {
+  margin-bottom: 10px;
+}
+
+.q-head {
+  margin-bottom: 24px;
+}
+
+.q-paragraph {
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+
+.q-head--center {
+  margin-top: 100px;   /* головний відступ */
+}
+
+/* QUANTUM — убрать коричневый фон только в блоке "Что входит ?" */
+.q-includes > div {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+/* QUANTUM — отступ между результатом и кнопкой "Отзывы учеников" */
+.q-result {
+  margin-bottom: 48px;
+}
+
+/* QUANTUM — отступ между статистикой и блоком "ДЛЯ КОГО" */
+.quantum-top__stats {
+  margin-bottom: 75px;
+}
+
+/* Відстань МІЖ трьома карточками на головній */
+#home {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* змінюй як треба: 60/80/100/120 */
+}

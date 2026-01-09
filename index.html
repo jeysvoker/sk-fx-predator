@@ -1,0 +1,124 @@
+<!-- =========================
+  index.html (UPDATED FULL)
+  - Centered QUANTUM "Подробнее" button
+  - Added carousel to DETAILS: CHAT
+========================= -->
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SK-FX PREDATOR</title>
+    <meta name="description" content="SK-FX PREDATORS — трейдинг це професія" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header class="hero" id="top">
+      <div class="hero__top">
+        <img class="hero__logo" src="assets/logo.jpg" alt="SK-FX logo" />
+        <h1 class="hero__title">SK-FX PREDATOR</h1>
+        <p class="hero__subtitle">ТРЕЙДИНГ ЭТО ПРОФЕССИЯ</p>
+
+        <nav class="hero__links hero__links--social" aria-label="Social links">
+          <a class="social-link" href="https://www.instagram.com/jeys.voker?igsh=M3Z0cDBpdm1xYWZh&utm_source=qr" target="_blank" rel="noopener">
+            <img src="assets/icons/instagram.svg" alt="Instagram" />
+            <span>Instagram</span>
+          </a>
+
+          <a class="social-link" href="https://t.me/SK_FX_PREDATOR" target="_blank" rel="noopener">
+            <img src="assets/icons/telegram.svg" alt="Telegram" />
+            <span>Telegram</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- DISCLAIMER -->
+      <section class="card card--disclaimer" aria-label="Disclaimer">
+        <div class="card__body">
+          <div class="card__kicker">DISCLAIMER</div>
+          <p class="card__text">
+            мы не заинтересованы уговаривать никого из вас, упросить никого из вас, мы заинтересованы в тех людях,
+            которые понимают что мы даем людям возможность, мы сами зарабатываем деньги и рады когда люди зарабатывают их с нами
+          </p>
+        </div>
+      </section>
+    </header>
+
+    <main class="page">
+      <!-- HOME -->
+      <section class="section" id="home" aria-label="Головна">
+        <!-- 1) Закрытый чат -->
+        <article class="card card--big" aria-label="Закритий чат">
+          <div class="card__body card__body--center">
+            <h2 class="card__title">ЗАКРЫТЫЙ ЧАТ</h2>
+            <p class="card__text card__text--center">
+              ИДЕАЛЬНО ПОДХОДИТ КАК ДЛЯ НАЧИНАЮЩИХ, ТАК И ДЛЯ ОПЫТНЫХ ТРЕЙДЕРОВ
+            </p>
+
+            <ul class="bullets">
+              <li>Ежедневная аналитика</li>
+              <li>Торговые сетапы / идеи</li>
+              <li>Бесплатное безовое обучение</li>
+              <li>Чат общения с другими участниками</li>
+            </ul>
+
+            <div class="cta-row">
+              <a class="btn btn--primary" href="details-chat.html">Подробнее</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2) Менторшип -->
+        <article class="card card--big card--mentor" aria-label="Менторшип">
+          <div class="card__body">
+            <h2 class="card__title">МЕНТОРШИП</h2>
+
+            <ul class="bullets">
+              <li>Полное изучение, каждого элемента анализа SM</li>
+              <li>Постоянная поддержка ментора</li>
+              <li>Создание персональной торговой стратегии</li>
+              <li>Работа в статике и динамике</li>
+              <li>С нуля до результата</li>
+            </ul>
+
+            <div class="cta-row cta-row--center">
+              <a class="btn btn--primary" href="details-mentor.html">Подробнее</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3) QUANTUM (HOME as on screenshot 1) -->
+        <article class="card card--big card--quantum" aria-label="Quantum">
+          <div class="card__body">
+            <h2 class="quantum__title">QUANTUM</h2>
+            <p class="quantum__subtitle">Лучший вариант обучения</p>
+
+            <ul class="quantum__list">
+              <li>2 ментора - 2 разных подхода к рынкам</li>
+              <li>2-3 лайв созвона в неделю</li>
+              <li>Разбор Ваших тейков и стопов</li>
+              <li>Бектест сессии с менторами</li>
+              <li>Утренняя лайв торговля Frankfurt/London вместе с вами</li>
+              <li>Разбор итогов в конце недели</li>
+              <li>Каждый из вас побывает в роли ментора демонстрирует свой подход к аналитике и торговле</li>
+            </ul>
+
+            <!-- CHANGED: force center -->
+            <div class="quantum-cta">
+              <a class="btn btn--primary" href="details-quantum.html">Подробнее</a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- Details were moved to separate pages: details-chat.html, details-mentor.html, details-quantum.html -->
+
+      <footer class="footer">
+        <small>© <span id="year"></span> SK-FX PREDATOR</small>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
